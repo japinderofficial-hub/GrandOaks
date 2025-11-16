@@ -1,0 +1,659 @@
+/* ===== General Styles ===== */
+
+#top {
+  background-color:#01172f;
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+  color: #002349;
+}
+
+  /* ===== Header Section ===== */
+  
+#c1,c2{
+    color:white;
+}
+header {
+    background-color: #002349;
+    border-bottom: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+  }
+
+  header h1 {
+    margin: 0;
+    font-size: 32px;
+  }
+
+  nav {
+    margin-top: 10px;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: #ffffff;
+    margin: 0 15px;
+    font-weight: bold;
+  }
+
+  nav a:hover {
+    color: #0077b6;
+  }
+
+  /* ===== Hero Section ===== */
+  .hero {
+    background-image: url('https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg');
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: relative;
+  }
+
+  .hero::after {
+    content:"" ;
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; 
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
+
+  .hero-content h2 {
+    font-size: 40px;
+    margin-bottom: 10px;
+  }
+
+  .hero-content p {
+    font-size: 18px;
+  }
+
+  /* ===== Footer Section ===== */
+  footer {
+    background-color: #002349;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+  }
+
+  footer p {
+    margin: 0;
+    font-size: 14px;
+  }
+
+/* ----------------------------------------------------- */
+/* FOR search-div.html */
+/* ===== Search Panel Popup ===== */
+#search-panel {
+  position: fixed;
+  top: 80px; /* appears below the header */
+  left: 50%;
+  transform: translateX(-50%) translateY(-50px);
+  width: 80%;
+  max-width: 900px;
+  background-color: #002349;
+  color: white;
+  padding: 30px;
+  border-radius: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease;
+  z-index: 1000;
+  text-align: center;
+}
+
+/* When Search is clicked (via #target effect) */
+#search-panel:target {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  pointer-events: auto;
+}
+
+/* Background dim effect when search panel opens */
+/* #search-panel:target::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+} */
+
+/* Search content layout */
+.search-content {
+  position: relative;
+}
+
+/* Options: Buy | Rent | Agents */
+.search-options {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+.search-options span {
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.search-options span:hover {
+  color: #ffd700;
+}
+
+/* Search bar */
+.search-bar {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.search-bar input {
+  width: 70%;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  font-size: 16px;
+}
+
+.search-bar button {
+  padding: 12px 25px;
+  background: #0077cc;
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.search-bar button:hover {
+  background: #005fa3;
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: white;
+  text-decoration: none;
+  font-size: 22px;
+  transition: 0.3s;
+}
+
+.close-btn:hover {
+  color: #ffd700;
+}
+
+
+/* ---------------------------------------------------- */
+/* for prop-div.html */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+  color: #002349;
+}
+
+header {
+  background-color: #002349;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 32px;
+}
+
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  margin: 0 15px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #0077b6;
+}
+
+/* ===== Hero Section ===== */
+.hero {
+  background: url('https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg') center/cover no-repeat;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+/* ===== Search Panel Popup ===== */
+#search-panel {
+  position: fixed;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50px);
+  width: 80%;
+  max-width: 900px;
+  background-color: #002349;
+  color: white;
+  padding: 30px;
+  border-radius: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease;
+  text-align: center;
+  z-index: 1000;
+}
+
+#search-panel:target {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  pointer-events: auto;
+}
+
+.search-options {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.search-bar input {
+  width: 70%;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  font-size: 16px;
+}
+
+.search-bar button {
+  padding: 12px 25px;
+  background: #0077cc;
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: white;
+  text-decoration: none;
+  font-size: 22px;
+}
+
+/* ===== Properties Panel Popup ===== */
+#properties-panel {
+  position: fixed;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50px);
+  width: 90%;
+  max-width: 1000px;
+  background-color: #002349;
+  color: white;
+  padding: 40px;
+  border-radius: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease;
+  z-index: 1000;
+}
+
+#properties-panel:target {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  pointer-events: auto;
+}
+
+.properties-content h2 {
+  text-align: center;
+  margin-top: 0;
+  font-size: 28px;
+}
+
+.properties-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  text-align: left;
+  margin-top: 20px;
+}
+
+.properties-section h3 {
+  color: #ffd700;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.properties-section p {
+  margin: 6px 0;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.properties-section p:hover {
+  color: #00b4d8;
+}
+
+/* ===== Footer ===== */
+footer {
+  background-color: #002349;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+}
+/* sell.css */
+body {
+  margin: 0;
+  font-family: "Georgia", serif;
+  color: #1a1a1a;
+  background-color: #f9f9f9;
+}
+
+/* Header Section */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #001f3f;
+  color: #fff;
+  padding: 20px 80px;
+  flex-wrap: wrap;
+}
+
+.header-left .logo {
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.header-right {
+  text-align: right;
+}
+
+.header-right h2 {
+  font-size: 32px;
+  margin: 0;
+}
+
+.header-right p {
+  font-style: italic;
+  font-size: 15px;
+  margin-top: 5px;
+}
+
+/* Hero Section */
+.hero img {
+  width: 100%;
+  height: 550px;
+  object-fit: cover;
+}
+
+/* Property Form Section */
+.property-form {
+  text-align: center;
+  background-color: #fff;
+  padding: 80px 20px;
+  margin-top: 50px;
+}
+
+.property-form h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #001f3f;
+}
+
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+button {
+  display: block;
+  width: 100%;
+  background-color: #001f3f;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #003366;
+}
+
+/* -------------------------------------------------------------------------------------------------------- */
+/* sell */
+/* sell.css */
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+
+header {
+  background-color: #1D2D44;
+  color: #F0EBD8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 2px solid white;
+  height: 48px;;
+}
+
+header h1 {
+  margin:0;
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border-bottom: 1px solid white;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 1px;
+}
+
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  position: relative;
+}
+
+nav a {
+  text-decoration: none;
+  color: #F0EBD8;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #FFD700;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 35px;
+  left: 0;
+  background-color: #1D2D44;
+  color: #F0EBD8;
+  padding: 15px 25px;
+  border-radius: 6px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  width: 240px;
+  backdrop-filter: blur(8px);
+}
+
+.dropdown-content p {
+  margin: 6px 0;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.dropdown-content p:hover {
+  color: #FFD700;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+  opacity: 1;
+}
+
+.sell-hero {
+  background-image: url(https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #1D2D44;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #F0EBD8;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  position: relative;
+  width: 100%;
+  
+}
+
+.sell-hero::after {
+  content: "";
+  position: absolute;
+  top:0; left:0; width:100%; height:100%;
+  background-color: rgba(29, 45, 68, 0.5);
+  z-index: 0;
+}
+.sell-hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 700px;
+  padding: 0 20px;
+}
+.sell-hero-content h2 {
+  font-size: 36px;
+  margin-bottom: 12px;
+}
+.sell-hero-content p {
+  font-size: 18px;
+  opacity: 0.9;
+}
+.sell-form {
+  background: #fff;
+  max-width: 800px;
+  margin: -10px auto 60px auto;
+  border-radius: 8px;
+  padding: 40px 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+.sell-form h3 {
+  color: #1D2D44;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+.form-group {
+  margin-bottom: 20px;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #1D2D44;
+}
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+  color: #1D2D44;
+}
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+.form-group button {
+  background: #1D2D44;
+  color: #F0EBD8;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.form-group button:hover {
+  background: #FFD700;
+  color: #1D2D44;
+}

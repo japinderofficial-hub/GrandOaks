@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GrandOaks Real Estate</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #F0EBD8;
+      color: #1D2D44;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #1D2D44;
+      color: #F0EBD8;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 2px solid white;
+    }
+
+    header h1 {
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      border-bottom: 1px solid white;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 35px;
+      position: relative;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #F0EBD8;
+      font-weight: 500;
+      position: relative;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #FFD700;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 35px;
+      left: 0;
+      background-color: #1D2D44;
+      color: #F0EBD8;
+      padding: 15px 25px;
+      border-radius: 6px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      width: 240px;
+      backdrop-filter: blur(8px);
+    }
+
+    .dropdown-content p {
+      margin: 6px 0;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .dropdown-content p:hover {
+      color: #FFD700;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+      opacity: 1;
+    }
+
+    .search-container {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background-color: #F0EBD8;
+      border-radius: 25px;
+      padding: 8px 16px;
+    }
+
+    .search-container input {
+      border: none;
+      background: transparent;
+      outline: none;
+      color: #1D2D44;
+      font-size: 14px;
+      width: 180px;
+    }
+
+    .search-btn {
+      background-color: #FFD700;
+      border: none;
+      border-radius: 20px;
+      padding: 8px 18px;
+      cursor: pointer;
+      font-weight: 600;
+      color: #1D2D44;
+      transition: all 0.3s;
+    }
+
+    .search-btn:hover {
+      background-color: #F0EBD8;
+      color: #1D2D44;
+      box-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
+    }
+
+    /* Simple select styling */
+    .simple-search {
+      text-align: center;
+      margin: 20px 0 40px 0;
+    }
+
+    select {
+      padding: 8px 12px;
+      border-radius: 6px;
+      border: 1px solid #1D2D44;
+      font-size: 15px;
+      background-color: #fff;
+      color: #1D2D44;
+      cursor: pointer;
+    }
+
+    select:hover {
+      background-color: #FFD700;
+      color: #1D2D44;
+    }
+
+    .simple-search button {
+      padding: 8px 18px;
+      background-color: #1D2D44;
+      color: #F0EBD8;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      margin-left: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .simple-search button:hover {
+      background-color: #FFD700;
+      color: #1D2D44;
+    }
+
+    .hero {
+      position: relative;
+      height: 80vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-align: center;
+    }
+
+    .hero video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(29, 45, 68, 0.6);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 600px;
+    }
+
+    .hero-content h2 {
+      font-size: 42px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .hero-content p {
+      font-size: 18px;
+      opacity: 0.9;
+      margin-bottom: 25px;
+    }
+
+    .featured {
+      padding: 70px 10%;
+      background-color: #fff;
+      text-align: center;
+    }
+
+    .featured h2 {
+      color: #1D2D44;
+      font-size: 28px;
+      margin-bottom: 40px;
+      border-bottom: 3px solid #1D2D44;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    .property-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+    }
+
+    .property {
+      background: #F0EBD8;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease;
+    }
+
+    .property:hover {
+      transform: translateY(-8px);
+      box-shadow: #1D2D44;
+    }
+
+    .property img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .property-info {
+      padding: 15px;
+      text-align: left;
+    }
+
+    .property-info h3 {
+      color: #1D2D44;
+      margin-bottom: 8px;
+      font-size: 18px;
+    }
+
+    .property-info p {
+      color: #333;
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+
+    footer {
+      background-color: #1D2D44;
+      color: #F0EBD8;
+      text-align: center;
+      padding: 25px 10px;
+      margin-top: 60px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px 20px;
+      }
+      .hero-content h2 {
+        font-size: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>GrandOaks</h1>
+    <nav>
+      <a href="#">Home</a>
+
+      <div class="dropdown">
+        <a href="#">Properties</a>
+        <div class="dropdown-content">
+          <p>Local</p>
+          <p>Properties Near Me</p>
+          <br>
+          <p>Worldwide</p>
+          <p>View Properties Globally</p>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <a href="#">Agents</a>
+        <div class="dropdown-content">
+          <p>Your Local Agents</p>
+          <p>Your Local Offices</p>
+          <br>
+          <p>Worldwide</p>
+          <p>Search Agents Globally</p>
+          <p>Search Offices Globally</p>
+        </div>
+      </div>
+
+      <a href="#">Contact</a>
+      <a href="sell.html">Sell</a>
+    </nav>
+
+    <div class="search-container">
+      <input type="text" placeholder="Search...">
+      <button class="search-btn">Search</button>
+    </div>
+  </header>
+
+  <!-- Simple select dropdown below header -->
+  
+
+  <section class="hero">
+    <video autoplay muted loop playsinline>
+      <source src="bg.mp4" type="video/mp4">
+    </video>
+    <div class="hero-content">
+      <h2>Find a Home that Suits Your Lifestyle</h2>
+      <p>Explore premium listings in your city or across the globe.</p>
+    </div>
+  </section>
+
+  <section class="featured">
+    <h2>Featured Properties</h2>
+    <div class="property-grid">
+      <!-- <div class="property"><img src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=1600" alt=""> -->
+        <a href="luxury-report1.html">
+          <img src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Luxury Report Banner">
+        </a>
+        <div class="property-info">
+          <h3>Luxury Villa, LA</h3>
+          <p>4 Beds • 3 Baths • 3500 sqft</p>
+          <p>$1,200,000</p>
+        </div>
+      </div>
+
+      <div class="property">
+        <a href="luxury-report2.html">
+          <img src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="">
+        </a>
+        <div class="property-info">
+          <h3>Beach House, Miami</h3>
+          <p>3 Beds • 2 Baths • 2100 sqft</p>
+          <p>$950,000</p>
+        </div>
+      </div>
+
+      <div class="property">
+        <a href="luxury-report3.html">
+          <img src="https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="">
+        </a>
+        <div class="property-info">
+          <h3>Modern Apartment, NYC</h3>
+          <p>2 Beds • 2 Baths • 1400 sqft</p>
+          <p>$850,000</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 GrandOaks Real Estate</p>
+    <p>Designed by Japinder</p>
+  </footer>
+
+</body>
+</html>
