@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sell Product</title>
+  <link rel="stylesheet" href="sell.css">
+</head>
+<body>
+
+  <!-- HEADER: same as main webpage -->
+  <header>
+    <h1>GrandOaks</h1>
+    <nav>
+      <a href="web1.html">Home</a>
+
+      <div class="dropdown">
+        <a href="#">Properties</a>
+        <div class="dropdown-content">
+          <p>Local</p>
+          <p>Properties Near Me</p>
+          <br>
+          <p>Worldwide</p>
+          <p>View Properties Globally</p>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <a href="#">Agents</a>
+        <div class="dropdown-content">
+          <p>Your Local Agents</p>
+          <p>Your Local Offices</p>
+          <br>
+          <p>Worldwide</p>
+          <p>Search Agents Globally</p>
+          <p>Search Offices Globally</p>
+        </div>
+      </div>
+
+      <!-- <a href="#">Contact</a> -->
+      <a href="sell.html" class="active">Sell</a>
+    </nav>
+
+    <div class="search-container">
+      <input type="text" placeholder="Search...">
+      <button class="search-btn">Search</button>
+    </div>
+  </header>
+
+  <!-- SELL HERO SECTION -->
+  <section class="sell-hero">
+    <div class="sell-hero-content">
+      <h2>Sell Your Property Easily</h2>
+      <p>Fill the form below to list your property with GrandOaks.</p>
+    </div>
+  </section>
+
+  <!-- FORM SECTION -->
+  <div class="sell-form">
+    <h2>Tell us about your Property</h2>
+    <form action="#" method="post">
+      <div class="form-group">
+        <label for="product-name">Property Name</label>
+        <input type="text" id="product-name" name="product-name" placeholder="Enter property name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="price">Price</label>
+        <input type="text" id="price" name="price" placeholder="Enter price" required>
+      </div>
+
+      <div class="form-group">
+        <label for="category">Category</label>
+        <select id="category" name="category" required>
+          <option value="">Select category</option>
+          <option value="residential">Residential</option>
+          <option value="commercial">Commercial</option>
+          <option value="land">Land</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea id="description" name="description" placeholder="Enter property details"></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn">Sell Now</button>
+    </form>
+  </div>
+
+  <footer>
+    <p>© 2025 GrandOaks Real Estate</p>
+    <p>Designed by Japinder</p>
+  </footer>
+
+</body>
+</html>

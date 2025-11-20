@@ -1,0 +1,111 @@
+/* Background */
+.bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=1600");
+    background-size: cover;
+    background-position: center;
+    filter: blur(4px) brightness(55%);
+    z-index: -1;
+}
+
+/* Main layout */
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 80px;
+    color: white;
+    font-family: "Georgia", serif;
+}
+
+/* LEFT SIDE */
+.left {
+    width: 50%;
+}
+
+.year {
+    font-size: 24px;
+    margin-bottom: 10px;
+    opacity: 0.9;
+}
+
+.title {
+    font-size: 65px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.line {
+    width: 120px;
+    height: 3px;
+    background-color: #d4c098;
+    margin: 25px 0;
+}
+
+.subtitle {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.description {
+    font-size: 18px;
+    line-height: 1.6;
+    width: 85%;
+    opacity: 0.95;
+    margin-bottom: 40px;
+}
+
+.logo {
+    font-size: 20px;
+    opacity: 0.9;
+}
+
+/* RIGHT SIDE */
+.right {
+    width: 32%;
+    background-color: rgba(10, 25, 45, 0.55);
+    padding: 35px;
+    border-radius: 12px;
+    text-align: left;
+}
+
+.right h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+
+label {
+    font-size: 16px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    border: none;
+    font-size: 16px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: transparent;
+    border: 2px solid #d4c098;
+    color: #d4c098;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+button:hover {
+    background-color: #d4c098;
+    color: black;
+}
