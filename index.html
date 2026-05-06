@@ -3,16 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sell Product</title>
-  <link rel="stylesheet" href="sell.css">
+  <title>GrandOaks Real Estate</title>
+  <link rel="stylesheet" href="1.css">
 </head>
 <body>
 
-  <!-- HEADER: same as main webpage -->
   <header>
     <h1>GrandOaks</h1>
     <nav>
-      <a href="home.html">Home</a>
+      <a href="index.html">Home</a>
 
       <div class="dropdown">
         <a href="#">Properties</a>
@@ -37,8 +36,7 @@
         </div>
       </div>
 
-      <!-- <a href="#">Contact</a> -->
-      <a href="index.html" class="active">Sell</a>
+      <a href="sell.html">Sell</a>
     </nav>
 
     <div class="search-container">
@@ -47,51 +45,61 @@
     </div>
   </header>
 
-  <!-- SELL HERO SECTION -->
-  <section class="sell-hero">
-    <div class="sell-hero-content">
-      <h2>Sell Your Property Easily</h2>
-      <p>Fill the form below to list your property with GrandOaks.</p>
+  <section class="hero">
+    <video autoplay muted loop >
+      <source src="bg.mp4" type="video/mp4">
+    </video>
+    <div class="hero-content">
+      <h2>Find a Home that Suits Your Lifestyle</h2>
+      <p>Explore premium listings in your city or across the globe.</p>
     </div>
   </section>
 
-  <!-- FORM SECTION -->
-  <div class="sell-form">
-    <h2>Tell us about your Property</h2>
-    <form action="#" method="post">
-      <div class="form-group">
-        <label for="product-name">Property Name</label>
-        <input type="text" id="product-name" name="product-name" placeholder="Enter property name" required>
+  <section class="featured">
+    <h2>Featured Properties</h2>
+    <div class="property-grid">
+
+      <div class="property">
+        <a href="luxury1.html">
+          <img src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Luxury Report Banner">
+        </a>
+        <div class="property-info">
+          <h3>Luxury Villa, LA</h3>
+          <p>4 Beds • 3 Baths • 3500 sqft</p>
+          <p>$1,200,000</p>
+        </div>
       </div>
 
-      <div class="form-group">
-        <label for="price">Price</label>
-        <input type="text" id="price" name="price" placeholder="Enter price" required>
+      <div class="property">
+        <a href="luxury2.html">
+          <img src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="">
+        </a>
+        <div class="property-info">
+          <h3>Beach House, Miami</h3>
+          <p>3 Beds • 2 Baths • 2100 sqft</p>
+          <p>$950,000</p>
+        </div>
       </div>
 
-      <div class="form-group">
-        <label for="category">Category</label>
-        <select id="category" name="category" required>
-          <option value="">Select category</option>
-          <option value="residential">Residential</option>
-          <option value="commercial">Commercial</option>
-          <option value="land">Land</option>
-        </select>
+      <div class="property">
+        <a href="luxury3.html">
+          <img src="https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="">
+        </a>
+        <div class="property-info">
+          <h3>Modern Apartment, NYC</h3>
+          <p>2 Beds • 2 Baths • 1400 sqft</p>
+          <p>$850,000</p>
+        </div>
       </div>
 
-      <div class="form-group">
-        <label for="description">Description</label>
-        <textarea id="description" name="description" placeholder="Enter property details"></textarea>
-      </div>
-
-      <button type="submit" class="submit-btn">Sell Now</button>
-    </form>
-  </div>
+    </div>
+  </section>
 
   <footer>
     <p>© 2025 GrandOaks Real Estate</p>
     <p>Designed by Japinder</p>
   </footer>
+  
   <script src="script.js"></script>
 
 </body>
